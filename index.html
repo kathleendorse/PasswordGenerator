@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+
+
+    <div class="container">
+        <button id='generate-password-button'>--Generate Random Password--</button>
+        <h1 id="showpassword"></h1>
+    </div>
+    <script type = "text/javascript">
+
+
+        //todo
+      
+        //prompt user choices
+            //button onclick prompt 'howmanycharacters' -generate password- <-- upon clicking, a function fires
+                //attach eventhandler for click
+               
+                //
+   
+            //confirm (and store choice ) special characters
+      
+            //confirm numbers
+      
+            //confirm lowercase
+      
+            //confirm uppercase
+      
+            //confirm uppercase
+
+
+        // password is generated in for text field of form using my specifications 
+        var generateButton = document.getElementById('generate-password-button')
+        generateButton.addEventListener('click', getUserChoices)
+
+            var specialCharacters = ["!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@", "_"]
+            var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+            var uppercaseCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+            var lowercaseCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+            var characterSelections = []
+            var passwordCharacter = []
+            var finalPassword
+
+        function getUserChoices(){
+            var numberOfCharacters = prompt ("How many characters would you like your password to contain?");
+            var includeSpecialCharacters = confirm ("Click OK to confirm including special characters.");
+            var includeNumbers = confirm ("Click OK to confirm including numeric characters");
+            var includeLowercase = confirm ("Click OK to confirm including lowercase characters");
+            var includeUppercase = confirm ("Click OK to confirm including uppercase characters");
+
+        
+            if (includeLowercase){
+                // push the whole character set to the characterSelections array
+//                characterSelections.push(lowercaseCharacters)
+
+                      //  OR
+
+                //a for loop that walks through the array of characters and pushes each individual character to the final array
+                for(var i = 0; i < lowercaseCharacters.length; i++){
+                    characterSelections.push(lowercaseCharacters[i])
+                }
+            }
+            if (includeNumbers){
+                for(var i = 0; i < numericCharacters.length; i++){
+                    characterSelections.push(numericCharacters[i])
+                }
+            }
+            //    characterSelections.push(numericCharacters)
+            
+            if (includeSpecialCharacters){
+                for(var i = 0; i < specialCharacters.length; i++){
+                    characterSelections.push(specialCharacters[i])
+                }
+            }
+            //    characterSelections.push(specialCharacters)
+            
+            if (includeUppercase){
+                for(var i = 0; i , uppercaseCharacters.length; i++){
+                    characterSelections.push(uppercaseCharacters)
+                }
+            }
+            //    characterSelections.push(uppercaseCharacters)
+            
+         
+       
+
+           // 
+           // alert (passwordCharacter)
+        //for(i-= 0; i < user choice for length ; i++) {
+
+
+        for (i = 0; i < numberOfCharacters; i++){    
+            var passwordCharacter = characterSelections[Math.floor(Math.random() * characterSelections.length)];
+            
+        }   
+// if its a String
+        
+    finalPassword.concat(passwordCharacter)     
+        //finalPassword .push (passwordCharacter)
+
+        alert (finalPassword)
+
+      
+        
+        
+        
+
+        // ------ABOVE CODE FUNCTIONS PROPERLY DO NOT DISTURB---
+
+        
+    </script>
+
+
+    
+</body>
+</html>
